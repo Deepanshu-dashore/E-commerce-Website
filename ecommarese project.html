@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
+    <title>E-comsite</title>
+    <link rel="stylesheet" href="style.css">
+</head> 
+<body>
+    <nav>
+
+        <a class="brand" href="ecommarese project.html">
+            <div class="logo">
+                <img src="D.png" alt="">
+            </div>
+            <div class="brandName"><span id="navTaxt">DD Get Deals With Us</span></div>
+        </a>
+        <div class="hadding">
+            <h3>Dashbord</h3>
+            <div id="line"></div>
+        </div>
+        <ul>
+            <li class="links">
+                <a href="#"><i class="bi bi-house"></i><span id="navTaxt">overview</span></a>
+            </li>
+            <li class="links">
+                <a href="#"><i class="bi bi-cart3"></i><span id="navTaxt"> my card</span><span id="AddPruductCount">1</span></a>
+            </li>
+            </ul>
+            
+        <div class="hadding">
+            <h3>Catagory</h3>
+            <div id="line"></div>
+        </div>
+        <ul>
+            <li class="links" onclick="filterByCatogroy(`smartphones`)">
+                <a href="#"><i class="bi bi-phone"></i><span id="navTaxt">Smart phone</span></a>
+            </li>
+            <li class="links" onclick="filterByCatogroy(`laptops`)">
+                <a href="#"><i class="bi bi-laptop"></i><span id="navTaxt">latop</span></a>
+            </li>
+            <li class="links" onclick="filterByCatogroy(`groceries`)">
+                <a href="#"><i class="bi bi-basket2-fill"></i><span id="navTaxt">grosarsy</span></a>
+            </li>
+            <li class="links" onclick="filterByCatogroy(`skincare`)">
+                <a href="#"><i class="bi bi-stars"></i><span id="navTaxt">skin care</span></a>
+            </li>
+            <li class="links" onclick="filterByCatogroy(`fragrances`)">
+                <a href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" style="margin-right: 8px;" width="1.7em" height="1.7em" viewBox="0 0 24 24"><path fill="#0033ff" fill-rule="evenodd" d="M9.95 1.25h.1c.664 0 1.237 0 1.696.062c.492.066.963.215 1.345.597s.531.854.597 1.345c.04.289.054.623.059.996h.573a5.75 5.75 0 0 1 2.571.607l.118.06c.944-1.02 2.614-1.04 3.866-.317c1.412.815 2.273 2.564 1.44 4.007c-.834 1.443-2.778 1.571-4.19.756c-1.12-.647-1.895-1.882-1.749-3.086l-.156-.078a4.25 4.25 0 0 0-1.9-.449h-.57V7l-.001.044c2.777 1.243 4.768 3.826 4.982 6.9c.02.084.024.172.014.26c.003.096.005.193.005.291c0 2.121-.85 4.05-2.234 5.504l-.018.018a5.143 5.143 0 0 1-.707.652c-.294.216-.644.402-1.142.616c-1.085.465-1.874.465-3.132.465H8.483c-1.258 0-2.047 0-3.132-.465c-.498-.214-.848-.4-1.142-.616a5.146 5.146 0 0 1-.707-.652L3.484 20C2.1 18.545 1.25 16.616 1.25 14.495c0-3.315 2.06-6.134 5.001-7.45A.759.759 0 0 1 6.25 7V5.5l.001-.04a.758.758 0 0 1-.001-.038V4.95c0-.665 0-1.238.062-1.697c.066-.491.215-.963.597-1.345s.854-.531 1.345-.597c.459-.062 1.032-.062 1.697-.062m7.103 11.68c-.755-2.942-3.59-5.177-7.045-5.18h-.016c-3.26.003-5.968 1.992-6.897 4.688c.286.126.576.266.865.407l.12.059c.362.177.727.355 1.11.524c.849.376 1.752.694 2.755.807c1.259.142 2.216-.295 3.37-.822l.011-.005c1.134-.518 2.46-1.118 4.195-.83c.529.088 1.054.208 1.532.352M2.774 13.94c.168.078.344.163.528.253l.121.06c.36.175.75.365 1.16.547c.919.407 1.979.789 3.194.926c1.676.188 2.968-.403 4.063-.904l.109-.05c1.142-.52 2.087-.92 3.326-.715c.775.13 1.477.326 1.974.529c-.023 1.673-.702 3.204-1.82 4.379c-.231.242-.356.371-.524.494c-.166.122-.401.256-.847.447c-.785.337-1.29.344-2.6.344H8.542c-1.31 0-1.815-.007-2.6-.344c-.446-.19-.68-.325-.847-.447c-.168-.123-.293-.252-.524-.494c-1.138-1.196-1.821-2.761-1.821-4.47c0-.187.008-.372.024-.555m9.476-7.69h-4.5v-.533c.059-.01.119-.025.179-.043c.202-.063.437-.188.608-.435c.166-.238.213-.505.213-.739c0-.234-.047-.501-.213-.74a1.135 1.135 0 0 0-.609-.434a1.44 1.44 0 0 0-.104-.027c.043-.206.099-.283.146-.33c.057-.056.159-.127.484-.17c.347-.047.818-.049 1.546-.049c.728 0 1.2.002 1.546.048c.325.044.427.115.484.172c.057.057.128.159.172.484c.046.347.048.818.048 1.546zm6.625 1.814c-.98-.565-1.162-1.487-.89-1.957c.27-.47 1.16-.773 2.14-.208c.98.566 1.162 1.488.89 1.958c-.27.47-1.16.773-2.14.207" clip-rule="evenodd"/></svg>    
+                <span id="navTaxt">fragrance</span></a>
+            </li>
+            <li class="links" onclick="filterByCatogroy(`home-decoration`)">
+                <a href="#"><i class="bi bi-house-heart"></i><span id="navTaxt">home decoration</span></a>
+            </li>
+            </ul>
+
+            <div class="hadding">
+                <h3>Price</h3>
+                <div id="line"></div>
+            </div>
+            <ul>
+                <li class="links"  onclick="filterByCatogroy(100)">
+                    <a href="#"><span id="navTaxt"><i class="bi bi-tags"></i></i>000 - </span>100 &#x20B9;<p class="underShow">under</p></a>
+                </li>
+                <li class="links"  onclick="filterByCatogroy(200)">
+                    <a href="#"><span id="navTaxt"><i class="bi bi-tags"></i></i>100 - </span>200 &#x20B9; <p class="underShow">under</p></a>
+                </li>
+                <li  class="links"  onclick="filterByCatogroy(300)">
+                    <a href="#"><span id="navTaxt"><i class="bi bi-tags"></i></i>200 - </span>300 &#x20B9; <p class="underShow">under</p></a>
+                </li>
+                <li class="links"  onclick="filterByCatogroy(400)">
+                    <a href="#"><span id="navTaxt"><i class="bi bi-tags"></i></i>300 - </span>400 &#x20B9; <p class="underShow">under</p></a>
+                </li>
+                <li class="links"  onclick="filterByCatogroy(500)">
+                    <a href="#"><span id="navTaxt"><i class="bi bi-tags"></i></i>400 - </span>500 &#x20B9; <p class="underShow">under</p></a>
+                </li>
+                </ul>
+
+                <div class="table">
+                    <table>
+                        <tr>
+                            <td><button class="profile" id="profile" onclick="ProfileEdit()"></button></td>
+                            <td class="nameBox">
+                                <h4 id="profileName">deepanshu dashore</h4>
+                                <p onclick="ProfileEdit()">change name <i class="bi bi-pencil-square"></i></p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+    </nav>
+   
+     <div id="homePage">
+
+        
+
+    </div>
+
+<!-- Modal -->
+  <div class="modelBg">
+    <div class="ModelContant card">
+        <div class="modelHeader"><h5 class="modal-title">Profile Information</h5><i class="bi bi-x-lg" onclick="cut()"></i></div>
+        <div class="ModelBody" id="ModelBody">
+            <div class="ModelProfile"></div><br>
+            <label for="IdName">User name</label>
+            <input type="text" class="InputM" value="deepanshu" id="IdName" onblur="ChangeName()"><i class="bi bi-pencil-square" id="editcon" style="position: absolute; top: 278px; left: 300px;"></i>
+            <label for="IdName">Profile Image Link</label>
+            <input type="text" class="InputM" placeholder="https:/example.pic/.com" id="PicLink" onblur="ChangeProfilePic()">
+        </div>
+    </div>
+  </div>
+  <!-- model close  -->
+  <!-- Modal -->
+  
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body Mbody">
+        </div><!--modelcontend close-->
+        </div>
+        <div class="modal-footer"></div><!--model footer-->
+      </div>
+</div>
+  <!-- model close  -->
+  <!-- Modal -->
+  <!----------\\second model NOTE-!sec model are not working becouse window only spport on model\\------------>
+
+  <!-- model close  -->
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+</body>
+</html>

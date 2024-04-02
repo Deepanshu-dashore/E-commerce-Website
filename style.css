@@ -1,0 +1,448 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+body{
+    background-color: #d6dbf5;
+}
+nav{
+    display: flex;
+    height: 100vh;
+    overflow-y: scroll;
+    flex-direction: column; 
+    position: relative;
+    width: 350px;
+    padding-left: 18px;
+    background-color: white;
+}
+nav::-webkit-scrollbar{
+    display: none;
+}
+#line{
+    height: 2.5px;
+    width: calc(100%/1.3);
+    background-color: rgba(8, 0, 255, 0.425);
+    position: absolute;
+    border-radius: 2px;
+    left: 10px;
+    opacity: 0%;
+}
+.underShow{
+    display: none;
+}
+.Navclose .underShow{
+    display: block;
+    font-size: 0.7rem;
+    text-transform: capitalize;
+    font-family: "Poppins", sans-serif;
+}
+.Navclose #line{
+    opacity: 100%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.Navclose .hadding h3{
+    display: none;
+}
+.hadding{
+    padding: 7px;
+    display: flex;
+    align-items: center;
+    width: 20px;
+}
+.hadding h3{
+    font-size: 1.4rem;
+    font-family: "Poppins", sans-serif;
+}
+nav ul{
+    list-style: none;
+    padding-left: 0px;
+}
+nav ul li{
+    padding: 12px;
+    width: 312px;
+    padding-left: 15px;
+}
+nav ul li a{
+    color: inherit;
+    text-decoration: none;
+    text-transform: capitalize;
+    font-size: 1.1rem;
+}
+nav li a i{
+    color: #0033ff;
+    font-size: 1.6rem;
+    margin-right: 18px;
+}
+.profile{
+    background: #000;
+    height: 55px;
+    width: 55px;
+    border-radius: 50%;
+    position: relative;
+    left: -2px;
+    top: -3px;
+    background-repeat: no-repeat;
+    background-position: 30% 10%;
+}
+.table p{
+    font-size: 0.8rem;
+    color: blue;
+    cursor: pointer;
+}
+.table h4{
+    font-size: 1.4rem;
+    text-transform: capitalize;
+}
+/* namebox are class of td */
+.nameBox{
+    width: 250px;
+    padding-left: 18px;
+    display: flex;
+    height: 70px;
+    margin-top: 16px;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-evenly;
+}
+.table table{
+    border-color: transparent;
+    height: 6rem;
+    width: 300px;
+}
+.table{
+    width: 300px;
+    margin-top: 5px;
+    border-top: 2.5px solid rgb(189, 198, 255);
+}
+.logo img{
+    height: 40px;
+    aspect-ratio: 1/1;
+    border-radius: 10px;
+    margin-top: 15px;
+    position: relative;
+    left: 3px;
+}
+.logo{
+    display: flex;
+    align-items: center;
+    height: 45px;
+    width: 45px;
+    justify-content: center;
+}
+.Navclose #navTaxt{
+    display: none;
+}
+.Navclose #AddPruductCount{
+    height: 16px !important;
+    width: 16px !important;
+    background-color: #ffc107;
+    color: white;
+    position: relative;
+    left: -30px;
+    top: -12px;
+    text-align: center;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 11px;
+    display: inline-block;
+    animation: pop 0.5s infinite alternate ease-in-out;
+}
+#AddPruductCount{
+    height: 16px !important;
+    width: 16px !important;
+    background-color: #ffc107;
+    color: white;
+    position: relative;
+    font-weight: 700;
+    left: 10px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 11px;
+    display: inline-block;
+    animation: pop 0.5s infinite alternate ease-in-out;
+}
+@keyframes pop {
+    0%{
+        height: 10px !important;
+        width: 10px !important;
+    }
+    50%{height: 16px !important;width: 16px !important;}
+}
+.brand{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #000;
+    margin-bottom: 20px;
+    
+}
+.brandName{
+    position: relative;
+    top: 9px;
+    left: 20px;
+    font-size: 1.3rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+}
+.links{
+    transition: 0.1s;
+    cursor: pointer;
+}
+.links:hover{
+    background: #0033ffab;
+    color: white;
+}
+
+/* body flex becuse side nav bar */
+body{
+    display: flex;
+}
+/*Home styling started*/
+#homePage{
+    height: 100vh;
+    width: 76.2%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-evenly; */
+    align-items: center;
+    overflow-y: scroll;
+}
+/* card stylin */
+.card{
+    height: 210px;
+    width: 1000px;
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+}
+.productImg{
+    height: 100%;
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.productImg img{
+    height: 90%;
+    width: 90%;
+    border-radius: 6px;
+}
+.content{
+    height: 100%;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    text-transform: capitalize;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    justify-content: space-evenly;
+}
+.content h1{
+    font-size: 1.9rem;
+}
+.price{
+    color: rgb(0, 0, 0);
+}
+.price span{
+    font-size: 20px;
+    margin-right: 10px;
+    color: rgba(0, 0, 0, 0.606);
+}
+.price sup{
+    font-size: 15px;
+    font-weight: 400;
+}
+.price .offparsentages{
+    font-size: 17px;
+    background-color: rgb(255, 33, 33);
+    border-radius: 5px;
+    padding: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+    color: white;
+}
+.content p i{
+    margin-left: 10px;
+}
+.content p button{
+    margin-left: 20px;
+    color: #1100ff;
+}
+
+/* model styling */
+.modal-body{
+    display: flex;
+}
+#Modelimage{
+    height: 450px;
+    width: 1100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+}
+#Modelimage img{
+    height: 98%;
+    width: 90%;
+}
+#ModelContend{
+    width: 1000px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+#ProductDescription{
+    font-size: 22px;
+    color: black;
+    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#ProductBrand{
+    color: rgb(106, 65, 255);
+    font-weight: 500;
+    text-transform: capitalize;
+}
+#ProductRating{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+#ModelDiscount{
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 20px;
+}
+#price{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 35px;
+    position: relative;
+    top: -8px;
+    margin-bottom: 20px;
+}
+#catagory{
+    color: #616161;
+    font-weight: 500;
+}
+#catagory span{
+    font-weight: 500;
+    text-transform: capitalize;
+    color: #000;
+    font-size: 20px;
+}
+.oderBtns{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 330px;
+}
+.oderBtns button{
+    padding: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 150px;
+    text-transform: capitalize;
+    font-weight: 500;
+    background-color: #00000002;
+}
+.oderBtns button i{
+    margin-left: 10px;
+}
+.addbtn:hover{
+    background-color: white!important;
+    color: #0d6efd!important;
+    border-color: #0d6efd;
+}
+.buybtn:hover{
+    background-color: white!important;
+    color: #ffc107!important;
+    border-color: #ffc107;
+}
+.addbtn{
+    background-color: #0d6efd!important;
+    color: white!important;
+    border-color: transparent;
+    transition: 0.4s;
+}
+.buybtn{
+    background-color: #ffc107!important;
+    color: white!important;
+    border-color: transparent;
+    transition: 0.4s;
+}
+/* second model style */
+.modelBg{
+    background-color: #21252979;
+    height: 100vh;
+    width: 100vw;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+}
+.ModelContant{
+    height: 430px;
+    width: 350px;
+    background-color: white;
+    display: block;
+}
+.ModelProfile{
+    background-color: #000;
+    height: 130px;
+    width: 130px;
+    border-radius: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 30% 10%;
+}
+.modelHeader{
+    height: 40px;
+    width: 87%;
+    margin-left: 20px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;    
+    justify-content: space-between;
+}
+.ModelBody{
+    margin-left: 20px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+.ModelBody label{
+    font-size: 12px;
+    font-weight: 500;
+    color: #0303ff;
+    margin-left: 12px;
+}
+.ModelInput{
+    height: 40px;
+    width: 90%;
+    padding: 5px;
+    margin: 8px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: none;
+    background-color: rgba(118, 115, 115, 0.2);
+    border-bottom: 1.5px solid #0033ff;
+}
+
+.InputM{
+    height: 40px;
+    width: 90%;
+    padding: 10px;
+    margin: 8px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: none;
+    
+}
+.bi-x-lg{
+    cursor: pointer;
+}
