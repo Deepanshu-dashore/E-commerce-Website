@@ -430,7 +430,7 @@ body{
     border-radius: 8px;
     border: none;
     background-color: rgba(118, 115, 115, 0.2);
-    border-bottom: 1.5px solid #0033ff;
+    border-bottom: 1.5px solid rgb(0, 51, 255);
 }
 
 .InputM{
@@ -445,19 +445,189 @@ body{
 }
 .bi-x-lg{
     cursor: pointer;
+    font-size: 25px;
 }
+.seccut{
+    cursor: pointer;
+    font-size: 25px;
+    position: relative;
+    right: -70px;
+}
+
 .modelBg2{
-    background-color: #21252979;
+    background-color: #d6dbf5;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     position: absolute;
 }
 .ModelContant2{
-    height: 85%;
-    width: 70%;
-    background-color: white;
+    height: 98%;
+    width: 98%;
     display: block;
+}
+.ModelContant2 ul li{
+    
+    padding: 20px 10px 20px 10px;
+    height: 250px;
+    display: flex;
+    position: relative;
+    left: -15px;
+    list-style: none;
+    align-items: center;
+    /* margin-left: 30px; */
+    border-top: 2px solid rgba(0, 0, 0, 0.194);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.194);
+    width: 100%;
+}
+.ModelContant2 ul li img{
+    height: 100%;
+    
+}
+.ModelContant2 ul{
+    height: 100%;
+    background-color: white;
+    width: 76%;
+    margin-left: 0px;
+}
+.ModelContant2 .ModelBody{
+    margin-left: 0px;
+    display: flex;
+    flex-direction: row;
+}
+.ModelContant2 .modelHeader{
+    height: 40px;
+    width: 90%;
+    margin-left: 50px;
+    margin-top: 20px;
+    display: flex;
+    font-size: 25px;
+    align-items: center;    
+    justify-content: space-between;
+}
+.secdiv{
+    width: 20%;
+    background-color: red;
+    height: 100vh;
+}
+.contantADDlist{
+    margin-left: 20px;
+    display: flex;
+    width: 640px;
+    height: 98%;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.contantADDlist p{
+    color: black;
+    font-weight: 500;
+    font-size: 20px;
+    font-family: "Poppins", sans-serif;
+}
+.Dropdown{
+    width: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.Dropdown h4{
+    font-size: 17px;
+    font-weight: 400;
+}
+.contantADDlist #AddListStock{
+    font-size: 15px;
+}
+.GiftCheak{
+    font-size: 13px !important;
+    display: flex;
+    width: 130px;
+    align-items: center;
+    justify-content: space-between;
+}
+.GiftCheak input{
+    height: 15px;
+    width: 15px;
+}
+.ModelContant2 .offparsentages{
+    background-color: red;
+    font-size: 12px;
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: 800;
+    color: white;
+    margin-left: 5px;
+    position: relative;
+    top: -80px;
+}
+.ModelContant2 .price{
+    position: relative;
+    top: -80px;
+    font-size: 22px;
+    font-weight: 700;
+    margin-left: 15px;
+}
+
+.ModelContant2 .price .rupe{
+    font-size: 16px;
+    font-weight: 700;
+    color: #000;
+    position: relative;
+    top: -2px;
+    right: -6px;
+}
+.total{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 280px;
+    width: 285px;
+    padding: 30px 23px;
+}
+.subTotal{
+    font-size: 18px;
+    font-weight: 600;
+}
+.subTotal span{
+    font-weight: 700;
+}
+.subTotal .rupe{
+    font-size: 15px;
+    font-weight: 400;
+    color: #000;
+    font-family: "Inter", sans-serif;
+    position: relative;
+}
+.secdiv .order{
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    width: 235px;
+    font-weight: 600;
+    justify-content: space-between;
+    color: #5500ff;
+}
+.secdiv .GiftCheak{
+    width: 175px;
+    position: relative;
+    left: -30px;
+    font-size: 13.5px !important;
+    top: -5px;
+}
+.secdiv .btn-warning{
+    font-size: 12.5px;
+    word-spacing: 3px;
+    width: 100%;
+    font-weight: 500;
+    background-color: #ffdd00;
+    font-family: sans-serif;
+}
+.secdiv .btn-warning:hover{
+    background-color: #f4b700;
+}
+#ExtraPruduct{
+    height: 500px;
+    width: 285px;
+    padding: 30px 23px;
 }
