@@ -23,14 +23,23 @@ ProfileEditPic.style.backgroundImage=(`url("${localURL}")`);
 
 // ------------------------------------------------------------------------------------------------------
 let tempitemarray=localStorage.getItem("Itemarray");
-console.log(tempitemarray);
+console.log()
 //this for opneig and closing Mycard window
 //function for Mycards window 
 function Mycard(){
     MycardDisplay.style.display="flex";
+    DisplayItemInUL(ItemArray)
+}
+//fuction to close add card window 
+function cutMycard(){
+        MycardDisplay.style.display="none";
+    
+}
+
+function DisplayItemInUL(array){
     let arrayi='';
     fetch("https://dummyjson.com/products").then(response=>response.json()).then((result)=>{
-         ItemArray.forEach((item)=>{
+         array.forEach((item)=>{
             arrayi+=result.products.filter((data)=>data.id==item).map((data)=>{
                 return (`
                 
@@ -67,14 +76,7 @@ function Mycard(){
          })//for each closing
          listOfItem.innerHTML=arrayi;
     })//then closing
-}
-//fuction to close Editprofile infomation window 
-function cutMycard(){
-        MycardDisplay.style.display="none";
-    
-}
-
-
+}//closing of functin Display
 // -----------------------------------------------------------------------------------------------------------------
 //this for opnig and closing profile information edit window
 //function for profile edit window 
