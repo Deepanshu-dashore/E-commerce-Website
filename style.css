@@ -458,7 +458,7 @@ body{
     background-color: #d6dbf5;
     height: 100vh;
     width: 100%;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     position: absolute;
@@ -470,7 +470,7 @@ body{
 }
 .ModelContant2 ul li{
     
-    padding: 20px 10px 20px 10px;
+    padding: 20px 10px;
     height: 250px;
     display: flex;
     position: relative;
@@ -478,18 +478,45 @@ body{
     list-style: none;
     align-items: center;
     /* margin-left: 30px; */
-    border-top: 2px solid rgba(0, 0, 0, 0.194);
-    border-bottom: 2px solid rgba(0, 0, 0, 0.194);
+    border-top: 1px solid rgba(0, 0, 0, 0.140);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.140);
     width: 100%;
 }
 .ModelContant2 ul li img{
     height: 100%;
-    
+    aspect-ratio: 1/0.8;
+}
+.firstDiv{
+    width: 76%;
+    height: auto;
+}
+.firstDiv .card2{
+    height: 50px;
+    width: 100%;
+}
+.firstDiv .card2 li{
+    height: 100%;
+    width: 104%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 5px;
+    border-color: transparent;
+}
+
+.firstDiv .card2 h1{
+    font-size: 15px;
+    width: 100px;
+    text-transform: capitalize;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #000000b4;
 }
 .ModelContant2 ul{
-    height: 100%;
+    height: auto;
     background-color: white;
-    width: 76%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
     margin-left: 0px;
 }
 .ModelContant2 .ModelBody{
@@ -509,7 +536,7 @@ body{
 }
 .secdiv{
     width: 20%;
-    background-color: red;
+    /* background-color: red; */
     height: 100vh;
 }
 .contantADDlist{
@@ -559,6 +586,7 @@ body{
     color: white;
     margin-left: 5px;
     position: relative;
+    width: 80.5px;
     top: -80px;
 }
 .ModelContant2 .price{
@@ -581,9 +609,32 @@ body{
     display: flex;
     align-items: center;
     flex-direction: column;
-    height: 280px;
+    height: auto;
     width: 285px;
     padding: 30px 23px;
+}
+.ListItem{
+    height: 10px !important;
+    text-transform: capitalize;
+    border-top-color: transparent !important;
+    display: flex;
+}
+.dot{
+    height: 8.5px;
+    width: 8.5px;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: -10px;
+    background-color: #464545;
+}
+.dot span{
+    height: 3px;
+    width: 3px;
+    border-radius: 50%;
+    background-color: white;
 }
 .subTotal{
     font-size: 18px;
@@ -630,4 +681,25 @@ body{
     height: 500px;
     width: 285px;
     padding: 30px 23px;
+}
+#Pmod{
+    height: 40px;
+    padding: 5px 20px;
+    width: 98%;
+    border:1px solid #0000007f;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.ModelBody .PmodLabel{
+    color: #000;
+    margin-top: 10px;
+    font-size: 12px;
+}
+#removeBtn{
+    position: absolute;
+    top: 155px;
+    right: 10px;
+}
+body::-webkit-scrollbar{
+    display: none;
 }

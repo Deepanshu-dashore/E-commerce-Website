@@ -17,8 +17,65 @@ let Modeldisplay=document.querySelector(".modelBg");
 let ProfileEditPic= document.querySelector(".ModelProfile");
 let AddItemCount=document.getElementById("AddPruductCount");
 let ProfileInputLink=document.getElementById("PicLink");
+let MycardDisplay=document.getElementById("modelBg2");
+let listOfItem=document.getElementById("ListOfItem");
 ProfileEditPic.style.backgroundImage=(`url("${localURL}")`);
 
+// ------------------------------------------------------------------------------------------------------
+let tempitemarray=localStorage.getItem("Itemarray");
+console.log(tempitemarray);
+//this for opneig and closing Mycard window
+//function for Mycards window 
+function Mycard(){
+    MycardDisplay.style.display="flex";
+    let arrayi='';
+    fetch("https://dummyjson.com/products").then(response=>response.json()).then((result)=>{
+         ItemArray.forEach((item)=>{
+            arrayi+=result.products.filter((data)=>data.id==item).map((data)=>{
+                return (`
+                
+             <!-------Item open--------------->
+             <li><img src="${data.thumbnail}" alt="">
+                 <div class="contantADDlist">
+                     <p>${data.title+`,`+data.description}</p> 
+                     <p id="AddListStock">${(data.stock<=10)?`Out of stock &nbsp;<i class="bi bi-shop-window" style="color:red;"></i>`:`In stock &nbsp;<i class="bi bi-shop-window" style="color:green;"></i>`}</p>
+                     <p class="GiftCheak"><input type="checkbox" name="" id="">This will be a gift</p>
+                     <div class="Dropdown">
+                         <h4>Quantity </h4>
+                         <select name="" id="">
+                             <option value="1"> 1</option>
+                             <option value="2"> 2</option>
+                             <option value="3"> 3</option>
+                             <option value="4"> 4</option>
+                             <option value="5"> 5</option>
+                             <option value="6"> 6</option>
+                             <option value="7"> 7</option>
+                             <option value="8"> 8</option>
+                             <option value="9"> 9</option>
+                             <option value="10+"> 10+</option>
+                         </select>
+                     </div>
+                 </div>
+                 <span class="offparsentages">${data.discountPercentage}% off</span>
+                 <span class="price"><span class="rupe">&#x20B9;</span>${data.price}<span>.00</span>
+                 <button class="btn text-primary" id="removeBtn">Remove</button>
+             </li>
+             <!-------Item close--------------->
+           
+                `)
+            })//map closing
+         })//for each closing
+         listOfItem.innerHTML=arrayi;
+    })//then closing
+}
+//fuction to close Editprofile infomation window 
+function cutMycard(){
+        MycardDisplay.style.display="none";
+    
+}
+
+
+// -----------------------------------------------------------------------------------------------------------------
 //this for opnig and closing profile information edit window
 //function for profile edit window 
 function ProfileEdit(){
@@ -79,7 +136,7 @@ function AddItemCountF(id){
     ItemArray.push(id);
     // console.log(i);
     AddItemCount.innerText=ItemArray.length;
-    localStorage.setItem('array',ItemArray);
+    localStorage.setItem('Itemarray',ItemArray);
 }
 //this event listener use to closing nav  
 nav.addEventListener("mouseleave",()=>{
