@@ -136,8 +136,8 @@ nav li a i{
     display: none;
 }
 .Navclose #AddPruductCount{
-    height: 16px !important;
-    width: 16px !important;
+    height: 16px;
+    width: 16px;
     background-color: #ffc107;
     color: white;
     position: relative;
@@ -151,8 +151,8 @@ nav li a i{
     animation: pop 0.5s infinite alternate ease-in-out;
 }
 #AddPruductCount{
-    height: 16px !important;
-    width: 16px !important;
+    height: 16px;
+    width: 16px;
     background-color: #ffc107;
     color: white;
     position: relative;
@@ -193,7 +193,7 @@ nav li a i{
 }
 .links:hover{
     background: #0033ffab;
-    color: white;
+    color: white !important;
 }
 
 /* body flex becuse side nav bar */
@@ -220,7 +220,7 @@ body{
 }
 .productImg{
     height: 100%;
-    width: 30%;
+    aspect-ratio: 1/0.7;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -353,13 +353,13 @@ body{
     margin-left: 10px;
 }
 .addbtn:hover{
-    background-color: white!important;
-    color: #0d6efd!important;
+    background-color: white;
+    color: #0d6efd;
     border-color: #0d6efd;
 }
 .buybtn:hover{
-    background-color: white!important;
-    color: #ffc107!important;
+    background-color: white;
+    color: #ffc107;
     border-color: #ffc107;
 }
 .addbtn{
@@ -702,4 +702,121 @@ body{
 }
 body::-webkit-scrollbar{
     display: none;
+}
+
+
+/* -----------------dard mode css-------------- */
+:root{
+    --clr:#845ffe;
+    --clr2:#0033ff;
+}
+.DarkMode{
+    background-color: #000;
+    color: white;
+}
+.DarkMode nav{
+    background-color: rgb(49, 49, 49);
+}
+.DarkMode nav i,nav .fracranceicon{
+    color: var(--clr) !important;
+    fill: var(--clr);
+}
+.DarkMode .Navclose #line{
+    background-color: #845ffe50;
+}
+.DarkMode nav ul #navTaxt,span{
+    color: inherit;
+}
+.DarkMode nav .brandName #navTaxt{
+    color: white;
+}
+.DarkMode .Homecard{
+    background-color: #ffffff81;
+}
+.DarkMode .Homecard p,span{
+    color: white;
+}
+.DarkMode .table tr{
+    background-color: transparent !important;
+    color: white;
+}
+.DarkMode .table tr p,.table tr i{
+    color: var(--clr);
+}
+.DarkMode .modelBg{
+    background-color: rgba(66, 63, 63, 0.475);
+}
+.DarkMode .ModelContant{
+    background-color: rgb(33, 37, 41);
+    color: white;
+}
+.DarkMode .ModelContant label{
+    color: var(--clr);
+}
+.DarkMode .ModelContant input{
+    background-color: #000;
+    color: white;
+}
+.DarkMode .modelBg2{
+    background-color: rgb(49, 49, 49);
+    overflow: scroll;
+}
+.DarkMode .modelBg2::-webkit-scrollbar{
+    display: none;
+}
+.DarkMode .ModelContant2 ul{
+    background-color:  #ffffffc0;
+    color: rgb(0, 0, 0);
+}
+.DarkMode .ModelContant2 ul li h1{
+    color: rgb(40, 40, 40);
+}
+.DarkMode .modelBg2 .bi-cart3{
+    color: var(--clr);
+}
+.DarkMode .total{
+    background-color:  #ffffffc0;
+}
+.DarkMode .total select{
+    background-color: #43434337;
+    border: none;
+    color: rgb(0, 0, 0);
+}
+.DarkMode #itemlist{
+    background-color: rgba(255, 0, 0, 0);
+    color: black
+}
+.DarkMode #itemlist .dot span{
+    background-color:  #ffffffc0;
+}
+.DarkMode #removeBtn{
+    color: var(--clr) !important;
+    border: 2px solid var(--clr);
+}
+.DarkMode .bg-dark #ProductDescription,.DarkMode .bg-dark #catagory,.DarkMode .bg-dark #catagory span,.DarkMode .bg-dark #price,.DarkMode .bg-dark #price span{
+    color: white;
+}
+.DarkMode .bg-dark .btn-close{
+    background-color: white;
+}
+
+/* --light mode element css */
+.lightMode{
+    color: black;
+}
+.lightMode .Homecard p,span,.brandName #navTaxt{
+    color: inherit;
+}
+.lightMode nav ul li,span{
+    color: inherit;
+}
+.lightMode nav i,nav .day{
+    color: #0033ff !important;
+    fill: #0033ff;
+}
+.lightMode .modelBg2 .bi-cart3{
+    color: var(--clr2);
+}
+.lightMode #removeBtn{
+    color: var(--clr2) !important;
 }
