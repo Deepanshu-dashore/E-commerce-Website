@@ -22,7 +22,7 @@ let listOfItem=document.getElementById("ListOfItem");
 let itemList=document.getElementById("itemlist");
 let subtotal=document.getElementById("subTotal");
 ProfileEditPic.style.backgroundImage=(`url("${localURL}")`);
-//set defult website coor theme mode light--------------
+//set defult website color theme mode light--------------
 let saveMode=localStorage.getItem('mode');
 let curentMode=(saveMode==null)?'LightMode':saveMode;
 document.querySelector("path").classList.add("day");
