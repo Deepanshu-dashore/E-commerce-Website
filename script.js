@@ -263,6 +263,10 @@ fetch("https://dummyjson.com/products").then(response=>response.json()).then((re
     homepage.innerHTML=newArray;
 });
 
+function scale(e){
+    e.style.scale="100px";
+}
+
 //this funtion with id parametar it use show fetch model data by particular id of array object ID
 function getModelData(id){
 console.log(id); 

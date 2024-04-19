@@ -820,3 +820,11 @@ body::-webkit-scrollbar{
 .lightMode #removeBtn{
     color: var(--clr2) !important;
 }
+.DarkMode .Homecard:hover{
+    transform: scale(1.03);
+    box-shadow: 0px 0px 500px 0px #845ffe58;
+}
+.lightMode .Homecard:hover{
+    transform: scale(1.03);
+    box-shadow: 0px 0px 500px 0px #0033ff86;
+}
