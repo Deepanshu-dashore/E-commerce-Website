@@ -229,10 +229,11 @@ nav.addEventListener("mouseenter",()=>{
 //this fetch use to fetch data from API and make it card  
 fetch("https://dummyjson.com/products").then(response=>response.json()).then((result)=>{
     console.log(result.products);
-    let newArray=result.products.map((data)=>{
+    let newArray=" ";
+    newArray+=result.products.map((data)=>{
         if(data.stock<=10){
             return(`
-        <div class="card Homecard">
+        <div class="card Homecard mt-4">
             <div class="productImg" ><img src="${data.thumbnail}" alt="product image"></div>
             <div class="content">
                 <h1>${data.title}</h1>
@@ -246,7 +247,7 @@ fetch("https://dummyjson.com/products").then(response=>response.json()).then((re
         }
         else{
             return(`
-        <div class="card Homecard">
+        <div class="card Homecard mt-4">
             <div class="productImg" ><img src="${data.thumbnail}" alt="product image"></div>
             <div class="content">
                 <h1>${data.title}</h1>
@@ -259,13 +260,10 @@ fetch("https://dummyjson.com/products").then(response=>response.json()).then((re
         `);
         }
         
-    })
-    homepage.innerHTML=newArray;
+    }).join('');
+    homepage.innerHTML=newArray.replace(","," ");
 });
 
-function scale(e){
-    e.style.scale="100px";
-}
 
 //this funtion with id parametar it use show fetch model data by particular id of array object ID
 function getModelData(id){
@@ -291,36 +289,23 @@ fetch("https://dummyjson.com/products").then(response=>response.json())
 //funtion for filter data by nav buttons
 function filterByCatogroy(catagory){
     fetch("https://dummyjson.com/products").then((response)=>response.json()).then((result)=>{
-        let filterArray=result.products.filter((data)=>data.category==catagory||(data.price<=catagory&&data.price>catagory-100)).map((data)=>{
-            if(data.stock<=10){
+        let filterArray=" ";
+         filterArray+=result.products.filter((data)=>data.category==catagory||(data.price<=catagory&&data.price>catagory-100)).map((data)=>{
+            
                 return(`
-            <div class="card Homecard">
+            <div class="card Homecard mt-4">
                 <div class="productImg" ><img src="${data.thumbnail}" alt="product image"></div>
                 <div class="content">
                     <h1>${data.title}</h1>
                     <p class="discripcation">${data.description}</p>
                     <h3 class="price"><span>Price</span><sup>&#x20B9;</sup>${data.price}<span>rupes</span><span class="offparsentages">${data.discountPercentage}% off</span></h3>
-                    <p>Out of stock<i class="bi bi-shop-window" style="color:red;"></i> <button type="button" onclick="getModelData(${data.id})" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">See more.</button>
+                    <p>${(data.stock>10)?`In stock<i class="bi bi-shop-window" style="color:green;"></i> `:`Out of stock<i class="bi bi-shop-window" style="color:red;"></i> `} 
+                    <button type="button" onclick="getModelData(${data.id})" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">See more.</button>
                     </p>
                 </div>
             </div>
             `);
-            }
-            else if(data.stock>10){
-                return(`
-            <div class="card Homecard">
-                <div class="productImg" ><img src="${data.thumbnail}" alt="product image"></div>
-                <div class="content">
-                    <h1>${data.title}</h1>
-                    <p class="discripcation">${data.description}</p>
-                    <h3 class="price"><span>Price</span><sup>&#x20B9;</sup>${data.price}<span>rupes</span><span class="offparsentages">${data.discountPercentage}% off</span></h3>
-                    <p>In stock<i class="bi bi-shop-window" style="color:green;"></i> <button type="button" onclick="getModelData(${data.id})" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">See more.</button>
-                    </p>
-                </div>
-            </div>
-            `);
-            }
-        })
+        }).join('');
         homepage.innerHTML=filterArray;
         
     })

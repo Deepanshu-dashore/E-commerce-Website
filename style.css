@@ -210,6 +210,7 @@ body{
     align-items: center;
     overflow-y: scroll;
 }
+
 /* card stylin */
 .card{
     height: 210px;
@@ -731,7 +732,7 @@ body::-webkit-scrollbar{
     color: white;
 }
 .DarkMode .Homecard{
-    background-color: #ffffff81;
+    background-color: #9a9a9aac;
 }
 .DarkMode .Homecard p,span{
     color: white;
