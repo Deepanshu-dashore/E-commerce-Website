@@ -268,7 +268,7 @@ section {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  height: 210px;
+  height: 510px;
   padding-right: 30px;
   overflow-y: scroll;
 }
@@ -276,7 +276,11 @@ section {
 .product-grid::-webkit-scrollbar{
   background-color: rgba(255, 255, 255, 0.402);
   border-radius: 10px;
+  width: 5px;
   border: 1px solid rgba(0, 0, 0, 0.189);
+}
+.product-grid:hover::-webkit-scrollbar{
+  width: 10px;
 }
 .product-grid::-webkit-scrollbar-thumb{
   background-color: #0033ff;
@@ -287,7 +291,7 @@ section {
 .product-card {
   width: 30%; /* Adjust width as needed for your layout */
   text-align: center;
-  height: 88%;
+  /* height: 88%; */
   margin-bottom: 20px;
   background-color: white;
   padding: 10px;
@@ -303,6 +307,7 @@ section {
 
 .product-card img {
   width: 100%;
+  aspect-ratio: 1/0.7;
   height: auto;
   margin-bottom: 10px;
 }
@@ -562,34 +567,11 @@ footer .container {
       
           <section class="products">
             <h3>Featured Products</h3>
-            <div class="product-grid">
-              <div class="product-card" data-hover-color="#f5f5f5">
-                <a href="product-details.html">
-                  <img src="product1.jpg" alt="Product 1">
-                </a>
-                <h4>Product Name</h4>
-                <p class="product-description">A short description of the product.</p>
-                <div class="product-ratings">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star-half-alt"></i>
-                  <i class="far fa-star"></i>
+            <div class="product-grid" id="product-grid">
+              
+              <!-- <div class="product-card" data-hover-color="#f5f5f5">
                 </div>
-                <button>View Details</button>
-              </div>
-              <div class="product-card" data-hover-color="#f5f5f5">
-                </div>
-              <div class="product-card" data-hover-color="#f5f5f5">
-                </div>
-              <div class="product-card" data-hover-color="#f5f5f5">
-                </div>
-              <div class="product-card" data-hover-color="#f5f5f5">
-                </div>
-              <div class="product-card" data-hover-color="#f5f5f5">
-                </div>
-              <div class="product-card" data-hover-color="#f5f5f5">
-                </div>
+   -->
               </div>
           </section>
           
@@ -648,7 +630,34 @@ footer .container {
         </div>
       </footer>
       
-      
+      <script>
+        let grid=document.getElementById("product-grid");
+         fetch("https://dummyjson.com/products").then((response)=>response.json()).then((result)=>{
+        let filterArray=" ";
+         filterArray+=result.products.map((data)=>{
+            
+                return(`
+                <div class="product-card" data-hover-color="#f5f5f5">
+                <a href="product-details.html">
+                  <img src="${data.thumbnail}" alt="Product 1">
+                </a>
+                <h4>${data.title}</h4>
+                <p class="product-description">${data.description}</p>
+                <div class="product-ratings">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+                  <i class="far fa-star"></i>
+                </div>
+                <button>View Details</button>
+              </div>
+            `);
+        }).join('');
+        grid.innerHTML=filterArray;
+        
+    })
+      </script>
     </body>
     </html>
     
