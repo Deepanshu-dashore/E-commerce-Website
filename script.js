@@ -27,12 +27,19 @@ let saveMode=localStorage.getItem('mode');
 let curentMode=(saveMode==null)?'LightMode':saveMode;
 document.querySelector("path").classList.add("day");
 document.body.classList.add((saveMode=="LightMode"||saveMode==null)?"lightMode":'DarkMode');
-if(saveMode!="LightMode"){
+if(saveMode=="LightMode"){
     let model=document.getElementById("bootstrapmodelbody");
     let navfarcranceicon=document.querySelector("path");
     model.classList.add("bg-dark");
     model.classList.add("text-light");
     navfarcranceicon.classList.replace("day","fracranceicon");
+}
+else{
+    let model=document.getElementById("bootstrapmodelbody");
+    let navfarcranceicon=document.querySelector("path");
+    model.classList.remove("bg-dark");
+    model.classList.remove("text-light");
+    navfarcranceicon.classList.replace("fracranceicon","day");
 }
 // -------------//---------------//-----------
 let tempitemarray=JSON.parse(localStorage.getItem("Itemarray"));
