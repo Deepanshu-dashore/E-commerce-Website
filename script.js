@@ -34,6 +34,13 @@ if(saveMode!="LightMode"){
     model.classList.add("text-light");
     navfarcranceicon.classList.replace("day","fracranceicon");
 }
+else{
+    let model=document.getElementById("bootstrapmodelbody");
+    let navfarcranceicon=document.querySelector("path");
+    model.classList.remove("bg-dark");
+    model.classList.remove("text-light");
+    navfarcranceicon.classList.replace("fracranceicon","day");
+}
 // -------------//---------------//-----------
 let tempitemarray=JSON.parse(localStorage.getItem("Itemarray"));
 if(tempitemarray!=null){
