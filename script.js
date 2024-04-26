@@ -27,7 +27,7 @@ let saveMode=localStorage.getItem('mode');
 let curentMode=(saveMode==null)?'LightMode':saveMode;
 document.querySelector("path").classList.add("day");
 document.body.classList.add((saveMode=="LightMode"||saveMode==null)?"lightMode":'DarkMode');
-if(saveMode!="LightMode"){
+if(saveMode=="LightMode"){
     let model=document.getElementById("bootstrapmodelbody");
     let navfarcranceicon=document.querySelector("path");
     model.classList.add("bg-dark");
