@@ -190,7 +190,7 @@ section {
 .highlights-container {
   text-align: center; /* Center the content horizontally */
   margin: 20px auto; /* Add margin for better spacing */
-  max-width: 900px; /* Set a maximum width for responsiveness */
+  max-width: 90%; /* Set a maximum width for responsiveness */
 }
 
 .highlights-container h2 {
@@ -243,6 +243,7 @@ section {
 
 @media (max-width: 768px) {
   .highlight-card {
+    align-items: center;
     width: calc(50% - 20px); /* Adjust card width for two cards per row on smaller screens */
   }
 }
@@ -422,6 +423,11 @@ footer {
   padding: 20px 0;
 }
 
+footer ul{
+  position: relative;
+  left: -25px;
+}
+
 footer .container {
   max-width: 1000px;
   margin: 0 auto;
@@ -465,7 +471,7 @@ footer .container {
 }
 
 .footer-col a:hover {
-  color: #839af0; /* Change hover color to your brand color */
+  color: #200040; /* Change hover color to your brand color */
 }
 
 .social-links li {
@@ -519,10 +525,10 @@ footer .container {
         <h1>DD Get Deals With Us</h1>
         <nav>
           </nav>
-        <div class="search-container">
+        <!-- <div class="search-container">
           <input type="text" placeholder="Search for products...">
           <button type="button"><i class="fas fa-search"></i></button>
-        </div>
+        </div> -->
       </header>
       
       <main>
@@ -534,7 +540,7 @@ footer .container {
           <div class="hero-content">
             <h2>Unbeatable Deals on Everything You Need</h2>
             <p>Discover incredible savings on a vast selection of top brands.</p>
-            <button>Shop Now</button>
+            <a href="/index.html"><button>Shop Now</button></a>
           </div>
         </section>
         
@@ -579,7 +585,7 @@ footer .container {
             <section class="call-to-action">
               <div class="container">  <h2>Ready to Start Saving?</h2>
                 <p>Explore our wide selection of deals and find the perfect products for you!</p>
-                <button>Shop Now</button>
+                <a href="/index.html"><button>Shop Now</button></a>
               </div>
             </section>
             
@@ -590,7 +596,17 @@ footer .container {
           <div class="footer-row">
             <div class="footer-col about-us">
               <h3>About Us</h3>
-              <p>**[Short description of your company and its mission]**</p>
+              <ul>
+                <li>
+                  <p>"We offer a wide variety of high-quality products at competitive prices."</p>
+                </li>
+                <li>
+                  <p>Our mission is to provide a convenient and enjoyable shopping experience for our customers.</p>
+                </li>
+                <li>
+                  <p>We are committed to excellent customer service.</p>
+                </li>
+              </ul>
             </div>
             <div class="footer-col navigation">
               <h3>Navigation</h3>
@@ -598,9 +614,14 @@ footer .container {
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Shop</a></li>
                 <li><a href="#">About Us</a></li>
-                <li><a href="#">Contact Us</a></li>
-                <li><a href="#">**[Additional navigation link]**</a></li>
-                <li><a href="#">**[Additional navigation link]**</a></li>
+                <li><a href="#">Contact Us</a>
+                <ul>
+                  <li> <p>Email: <a href="mailto:support@yourdomain.com">support@yourdomain.com</a></p></li>
+                  <li><p>Phone: +1 (555) 555-5555</p></li>
+                </ul>
+                </li>
+                <!-- <li><a href="#">**[Additional navigation link]**</a></li> -->
+                <!-- <li><a href="#">**[Additional navigation link]**</a></li> -->
               </ul>
             </div>
             <div class="footer-col customer-service">
@@ -608,7 +629,7 @@ footer .container {
               <ul>
                 <li><a href="#">FAQ</a></li>
                 <li><a href="#">Shipping & Returns</a></li>
-                <li><a href="#">**[Additional customer service link]**</a></li>
+                <!-- <li><a href="#">**[Additional customer service link]**</a></li> -->
               </ul>
             </div>
             <div class="footer-col social-links">
@@ -617,7 +638,7 @@ footer .container {
                 <li><a href="#"><i class="fab fa-facebook-f"></i> Facebook</a></li>
                 <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
                 <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
-                <li><a href="#">**[Additional social media link]**</a></li>
+                <!-- <li><a href="#">**[Additional social media link]**</a></li> -->
               </ul>
             </div>
           </div>
@@ -625,7 +646,7 @@ footer .container {
           <div class="footer-bottom">
             <div class="payment-logos">
               </div>
-            <p class="copyright">&copy; 2024 **[Your Company Name]**</p>
+            <p class="copyright">&copy; 2024 DD Get Deals With Us</p>
           </div>
         </div>
       </footer>

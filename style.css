@@ -218,6 +218,7 @@ body{
     display: flex;
     flex-direction: row;
     margin-top: 10px;
+    transition: 0.5s;
 }
 .productImg{
     height: 100%;

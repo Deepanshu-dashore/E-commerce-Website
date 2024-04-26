@@ -87,9 +87,26 @@ function displayItem(array){
                 `);
             })//map closing
          })//for each closing
-         itemList.innerHTML=List;
-         subtotal.innerHTML=(ItemArray.length==0)?(`Subtotal (0 items): <span class="rupe">&#x20B9;</span><span>0</span>`):(`Subtotal (${ItemArray.length} items): <span class="rupe">&#x20B9;</span><span>${eval(price)}.00</span>`);
-         listOfItem.innerHTML=arrayi;
+         if(array.length==0){
+            console.log("nothing");
+             listOfItem.innerHTML=`<li><div class="contantADDlist">
+             <p style="width: 160%;
+             height: 100%;
+             display: flex;
+             text-align:center;
+             font-size:25px;
+             font-weight: 100;
+             opacity: 35%;
+             align-items: center;
+             justify-content: center;
+             text-transform: capitalize;">nothing was selected</p> 
+             </li>`;
+        }
+        else{
+            listOfItem.innerHTML=arrayi;
+        }
+        subtotal.innerHTML=(ItemArray.length==0)?(`Subtotal (0 items): <span class="rupe">&#x20B9;</span><span>0</span>`):(`Subtotal (${ItemArray.length} items): <span class="rupe">&#x20B9;</span><span>${eval(price)}.00</span>`);
+        itemList.innerHTML=List;
     }).catch(e=>e.alert("Erroe 404 data note founted"))//then closing
 }//display function closing
 
@@ -291,7 +308,6 @@ function filterByCatogroy(catagory){
     fetch("https://dummyjson.com/products").then((response)=>response.json()).then((result)=>{
         let filterArray=" ";
          filterArray+=result.products.filter((data)=>data.category==catagory||(data.price<=catagory&&data.price>catagory-100)).map((data)=>{
-            
                 return(`
             <div class="card Homecard mt-4">
                 <div class="productImg" ><img src="${data.thumbnail}" alt="product image"></div>
@@ -306,7 +322,22 @@ function filterByCatogroy(catagory){
             </div>
             `);
         }).join('');
+        if(filterArray==' '){
+            homepage.innerHTML=`
+            <div class="card Homecard mt-4">
+                    <h1 style="width: 100%;
+                    height: 100%;
+                    display: flex;
+                    font-size:25px;
+                    align-items: center;
+                    font-weight: 400;
+                    justify-content: center;
+                    text-transform: capitalize;"><i class="bi bi-exclamation-triangle"></i>&nbsp;Item not found in selected filter</h1>
+            </div>
+            `;
+        }
+        else{
         homepage.innerHTML=filterArray;
-        
+        }//else closing
     })
 }
