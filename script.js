@@ -21,26 +21,27 @@ let MycardDisplay=document.getElementById("modelBg2");
 let listOfItem=document.getElementById("ListOfItem");
 let itemList=document.getElementById("itemlist");
 let subtotal=document.getElementById("subTotal");
+let ToggleIcon=document.getElementById("ToggleIconInner");
 ProfileEditPic.style.backgroundImage=(`url("${localURL}")`);
 //set defult website color theme mode light--------------
+let model=document.getElementById("bootstrapmodelbody");
+let navfarcranceicon=document.querySelector("path");
+
 let saveMode=localStorage.getItem('mode');
 let curentMode=(saveMode==null)?'LightMode':saveMode;
 document.querySelector("path").classList.add("day");
 document.body.classList.add((saveMode=="LightMode"||saveMode==null)?"lightMode":'DarkMode');
-if(saveMode=="LightMode"){
-    let model=document.getElementById("bootstrapmodelbody");
-    let navfarcranceicon=document.querySelector("path");
+if(saveMode!="LightMode"){
     model.classList.add("bg-dark");
     model.classList.add("text-light");
     navfarcranceicon.classList.replace("day","fracranceicon");
 }
-else{
-    let model=document.getElementById("bootstrapmodelbody");
-    let navfarcranceicon=document.querySelector("path");
+if(saveMode=="LightMode"||saveMode==null){
     model.classList.remove("bg-dark");
     model.classList.remove("text-light");
     navfarcranceicon.classList.replace("fracranceicon","day");
 }
+
 // -------------//---------------//-----------
 let tempitemarray=JSON.parse(localStorage.getItem("Itemarray"));
 if(tempitemarray!=null){
@@ -71,7 +72,7 @@ function displayItem(array){
                      <p class="GiftCheak"><input type="checkbox" name="" id="">This will be a gift</p>
                      <div class="Dropdown">
                          <h4>Quantity </h4>
-                         <select name="" id="">
+                         <select name="" id="itemselection">
                              <option value="1"> 1</option>
                              <option value="2"> 2</option>
                              <option value="3"> 3</option>
@@ -125,6 +126,7 @@ function cutMycard(){
 //get value in local storage by cliking add card btn and show count of add product
 function AddItemCountF(id){
     ItemArray.push(id);
+    console.log(qtyarray);
     dispalyCountCondition();
     AddItemCount.innerText=ItemArray.length;
     let strobj=JSON.stringify(ItemArray);
@@ -238,13 +240,13 @@ function ChangeName(){
 }
 
 //this event listener use to closing nav  
-nav.addEventListener("mouseleave",()=>{
+document.getElementById("laptopNav").addEventListener("mouseleave",()=>{
     nav.style.width=(90+"px");
     nav.classList.add("Navclose");
     homepage.style.width=(100+'%');
 })
 //this event listener use to showing nav on hover 
-nav.addEventListener("mouseenter",()=>{
+document.getElementById("laptopNav").addEventListener("mouseenter",()=>{
     nav.style.width=(350+"px");
     nav.classList.replace("Navclose","Navopen");
     homepage.style.width=(76.2+'%');
@@ -255,7 +257,6 @@ fetch("https://dummyjson.com/products").then(response=>response.json()).then((re
     console.log(result.products);
     let newArray=" ";
     newArray+=result.products.map((data)=>{
-        if(data.stock<=10){
             return(`
         <div class="card Homecard mt-4">
             <div class="productImg" ><img src="${data.thumbnail}" alt="product image"></div>
@@ -263,26 +264,12 @@ fetch("https://dummyjson.com/products").then(response=>response.json()).then((re
                 <h1>${data.title}</h1>
                 <p class="discripcation">${data.description}</p>
                 <h3 class="price"><span>Price</span><sup>&#x20B9;</sup>${data.price}<span> rupee</span><span class="offparsentages">${data.discountPercentage}% off</span></h3>
-                <p>Out of stock<i class="bi bi-shop-window" style="color:red;"></i> <button type="button" onclick="getModelData(${data.id})" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">See more.</button>
+                <p  class="stock">${(data.stock>10)?`In stock<i class="bi bi-shop-window instock"></i> `:`Out of stock<i class="bi bi-shop-window outstock"></i>`} 
+                <button type="button" onclick="getModelData(${data.id})" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">See more.</button> 
                 </p>
             </div>
         </div>
         `);
-        }
-        else{
-            return(`
-        <div class="card Homecard mt-4">
-            <div class="productImg" ><img src="${data.thumbnail}" alt="product image"></div>
-            <div class="content">
-                <h1>${data.title}</h1>
-                <p class="discripcation">${data.description}</p>
-                <h3 class="price"><span>Price</span><sup>&#x20B9;</sup>${data.price}<span> rupee</span><span class="offparsentages">${data.discountPercentage}% off</span></h3>
-                <p>In stock<i class="bi bi-shop-window" style="color:green;"></i> <button type="button" onclick="getModelData(${data.id})" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">See more.</button>
-                </p>
-            </div>
-        </div>
-        `);
-        }
         
     }).join('');
     homepage.innerHTML=newArray.replace(","," ");
@@ -301,7 +288,7 @@ fetch("https://dummyjson.com/products").then(response=>response.json())
       <p id="ProductDescription">${result.products[id-1].description}</p>
       <p id="ProductBrand">Brand ${result.products[id-1].brand}</p>
       <p id="catagory">Category &nbsp;<span>${result.products[id-1].category}</span></p>
-      <p id="ModelStocks">${(result.products[id-1].stock<=10)?`Out of stock &nbsp;<i class="bi bi-shop-window" style="color:red;"></i>`:`In stock &nbsp;<i class="bi bi-shop-window" style="color:green;"></i>`}</p>
+      <p id="ModelStocks">${(result.products[id-1].stock<=10)?`Out of stock &nbsp;<i class="bi bi-shop-window outstock"></i>`:`In stock &nbsp;<i class="bi bi-shop-window instock"></i>`}</p>
       <p id="ProductRating">Rating&nbsp; <span>${result.products[id-1].rating}</span></p>
       <h3 class="price" id="price"><span>Price</span><sup>&#x20B9;</sup>${result.products[id-1].price}<span>&nbsp;rupee</span><span class="offparsentages" id="ModelDiscount">- ${result.products[id-1].discountPercentage}% off</span></h3>
       <p class="oderBtns"><button class="btn  addbtn" onclick="AddItemCountF(${result.products[id-1].id})">add to card<i class="bi bi-cart-plus"></i></button><button class="btn buybtn">buy now<i class="bi bi-bag-check"></i></button></p>
@@ -322,7 +309,7 @@ function filterByCatogroy(catagory){
                     <h1>${data.title}</h1>
                     <p class="discripcation">${data.description}</p>
                     <h3 class="price"><span>Price</span><sup>&#x20B9;</sup>${data.price}<span>rupes</span><span class="offparsentages">${data.discountPercentage}% off</span></h3>
-                    <p>${(data.stock>10)?`In stock<i class="bi bi-shop-window" style="color:green;"></i> `:`Out of stock<i class="bi bi-shop-window" style="color:red;"></i> `} 
+                    <p class="stock">${(data.stock>10)?`In stock<i class="bi bi-shop-window instock"></i> `:`Out of stock<i class="bi bi-shop-window outstock"></i> `} 
                     <button type="button" onclick="getModelData(${data.id})" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">See more.</button>
                     </p>
                 </div>
@@ -347,4 +334,30 @@ function filterByCatogroy(catagory){
         homepage.innerHTML=filterArray;
         }//else closing
     })
+}
+
+//function for nav collapsing and uncollapsing
+let currentStuts='close';
+function Navmenu(){
+    let menu=document.getElementById("collapsee");
+    let icon=document.getElementById("ToggleIcon");
+    let nav=document.getElementById("MobileNav");
+    if(currentStuts=="close"){
+        currentStuts="open"; 
+        menu.style.display="block";
+        icon.innerHTML=(`<svg xmlns="http://www.w3.org/2000/svg"  class="ToggleIcon" id="ToggleIconInner" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="m16.192 6.344-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z"></path></svg>`);
+        nav.style.position="fixed";
+        nav.style.zIndex="2";
+        nav.style.height="100vh";
+        nav.style.overflow="scroll";
+    }
+    else {
+        currentStuts="close"; 
+        menu.style.display="none";
+        icon.innerHTML=(`<svg xmlns="http://www.w3.org/2000/svg" class="ToggleIcon" id="ToggleIconInner" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);"><path d="M4 6h16v2H4zm4 5h12v2H8zm5 5h7v2h-7z"></path></svg>`);
+        nav.style.position="static";
+        nav.style.zIndex="0";
+        nav.style.height="auto";
+        nav.style.overflow="none";
+    }
 }

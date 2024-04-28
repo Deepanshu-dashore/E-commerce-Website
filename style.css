@@ -8,10 +8,8 @@ body{
     background-color: #d6dbf5;
 }
 nav{
-    display: flex;
     height: 100vh;
     overflow-y: scroll;
-    flex-direction: column; 
     position: relative;
     width: 350px;
     padding-left: 18px;
@@ -620,6 +618,8 @@ body{
     text-transform: capitalize;
     border-top-color: transparent !important;
     display: flex;
+    overflow-y: hidden;
+    width: 220px !important;
 }
 .dot{
     height: 8.5px;
@@ -805,10 +805,22 @@ body::-webkit-scrollbar{
     transform: scale(1.03);
     box-shadow: 0px 0px 100px 5px #845ffe80;
 }
+.DarkMode .instock{
+    color: rgb(80, 255, 94);
+}
+.DarkMode .outstock{
+    color: rgb(255, 72, 72);
+}
 
 /* --light mode element css */
 .lightMode{
     color: black;
+}
+.lightMode .instock{
+    color: green;
+}
+.lightMode .outstock{
+    color: red;
 }
 .lightMode .Homecard p,span,.brandName #navTaxt{
     color: inherit;
@@ -829,4 +841,82 @@ body::-webkit-scrollbar{
 .lightMode .Homecard:hover{
     transform: scale(1.03);
     box-shadow: 0px 0px 500px 0px #0033ff86;
+}
+/* resposive ness code  */
+@media screen and (max-width:430px){
+    .Latopnav{
+        display: none;
+    }
+    body{
+        flex-direction: column;
+    }
+    .Mobilenav{
+        height: auto;
+        width: 100%;
+    }
+    .lightMode #ToggleIcon path{
+        fill:black;
+    }
+    .DarkMode  #ToggleIcon path{
+        fill: white;
+    }
+    .collapsee{
+        /* position: absolute;
+        z-index: 3; */
+        display: none;
+    }
+    .brandName {
+        font-size: 1rem;
+    }
+    .brand{
+        justify-content: left;
+    }
+    .ToggleIcon{
+        width: 25px;
+    }
+    .logo img{
+        height: 80%;
+        width: 80%;
+    }
+    .card{
+        flex-direction: column;
+        height: auto;
+        width: 90%;
+    }
+    .card .productImg,img{
+        height: 220px;
+        width: 100%;
+        aspect-ratio: 1/1;
+    }
+    .price{
+        font-size: 1.5rem;
+    }
+    .price .offparsentages{
+        font-size: 0.8rem;
+    }
+    #homePage{
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        width: 100%;
+    }
+    .content{
+        width: 99%;
+    }
+    .stock{
+        width: 90%;
+        display: grid;
+        grid-template-columns: 60px 8px 250px;
+    }
+    .collapse{
+        display: block;
+    }
+}
+@media screen and (min-width:430px){
+    .Latopnav{
+        display: block !important;
+    }
+    .Mobilenav{
+        display: none !important;
+    }
 }
