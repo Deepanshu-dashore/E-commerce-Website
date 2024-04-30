@@ -316,6 +316,7 @@ function filterByCatogroy(catagory){
             </div>
             `);
         }).join('');
+        Navmenu();
         if(filterArray==' '){
             homepage.innerHTML=`
             <div class="card Homecard mt-4">
